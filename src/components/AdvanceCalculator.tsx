@@ -19,9 +19,47 @@ const AdvanceCalculator = () => {
 
 	const [inputOperator, setInputOperator] = useState("");
 
-	const handleCalculate = () => {};
+	const handleCalculate = () => {
+		const numberOne = parseInt(inputOne);
+		const numberTwo = parseInt(inputTwo);
 
-	const handleReset = () => {};
+		let result: number;
+
+		switch (inputOperator) {
+			case "plus":
+				result = numberOne + numberTwo;
+				setInputTotal(result.toString());
+
+				break;
+			case "minus":
+				result = numberOne - numberTwo;
+				setInputTotal(result.toString());
+
+				break;
+			case "multiply":
+				result = numberOne * numberTwo;
+				setInputTotal(result.toString());
+
+				break;
+
+			case "divide":
+				result = numberOne / numberTwo;
+				setInputTotal(result.toString());
+
+				break;
+		}
+
+		setInputOne("");
+		setInputTwo("");
+		setInputOperator("");
+	};
+
+	const handleReset = () => {
+		setInputOne("");
+		setInputTwo("");
+		setInputOperator("");
+		setInputTotal("");
+	};
 
 	return (
 		<div className="grid grid-cols-3 gap-8">
